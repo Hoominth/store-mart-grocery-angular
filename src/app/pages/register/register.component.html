@@ -1,0 +1,49 @@
+<div class="authentication">
+  <div class="authentication-container">
+    <form (ngSubmit)="register()">
+      <h2>Đăng ký</h2>
+      <div class="input-group">
+        <label for="username">Tên đăng nhập:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          [(ngModel)]="username"
+        />
+      </div>
+      <div class="input-group">
+        <label for="email">email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          required
+          [(ngModel)]="email"
+        />
+      </div>
+      <div class="input-group">
+        <label for="password">Mật khẩu:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          [(ngModel)]="password"
+        />
+      </div>
+      <div class="input-group">
+        <button type="submit">Đăng ký</button>
+      </div>
+    </form>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <a routerLink="/login"> login </a>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="overlay__loading">
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+[
+  {
+    "path": "/compare",
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-compare.svg",
+    "title": "Compare",
+    "count": 3
+  },
+  {
+    "path": "/wish-list",
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-heart.svg",
+    "title": "Wishlist",
+    "count": 6
+  },
+  {
+    "path": "/shop-cart",
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-cart.svg",
+    "title": "Cart",
+    "count": 2
+  },
+  {
+    "path": "/account",
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-user.svg",
+    "title": "Account"
+  }
+]

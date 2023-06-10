@@ -1,0 +1,12 @@
+<div class="categories">
+  <div *ngFor="let category of data" class="category">
+    <figure class="category__image">
+      <a routerLink="">
+        <img [src]="category.icon" [alt]="category.title" />
+      </a>
+    </figure>
+    <h6>
+      <a routerLink="">{{ category.title }}</a>
+    </h6>
+  </div>
+</div>

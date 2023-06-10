@@ -1,0 +1,23 @@
+.rating {
+  background-image: url("https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/rating-stars.png");
+  background-position: 0 -12px;
+  background-repeat: repeat-x;
+  height: 12px;
+  width: 60px;
+  transition: all 0.5s ease-out 0s;
+  -webkit-transition: all 0.5s ease-out 0s;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.rating span {
+  vertical-align: top;
+}
+
+.rating__star > div {
+  height: 12px;
+  background-repeat: repeat-x;
+  background-image: url("https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/rating-stars.png");
+  background-position: 0 0;
+}

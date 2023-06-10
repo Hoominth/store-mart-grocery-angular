@@ -1,0 +1,51 @@
+<section class="section__slider">
+  <div class="container">
+    <div class="slider">
+      <app-slider class="sliders"></app-slider>
+      <div class="slider__banner">
+        <div class="slider__banner-image">
+          <div class="slider__banner-content">
+            <h2>
+              Delivered <br />to
+              <span> your <br />home </span>
+            </h2>
+            <a class="btn slider__banner-btn" href="">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section__categories">
+  <div class="container">
+    <div class="section__heading">
+      <h3>Featured Categories</h3>
+    </div>
+    <app-category-box [data]="categories"></app-category-box>
+    <app-banner [data]="banners"></app-banner>
+  </div>
+</section>
+
+<section class="section__products">
+  <div class="container">
+    <div class="section__heading">
+      <h3>Popular Products</h3>
+      <ul class="categories__list">
+        <li *ngFor="let category of categories.slice(0, 5)">
+          <a
+            [routerLink]="['/', category.id]"
+            routerLinkActive="active not-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ category.title }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <app-card [data]="products"></app-card>
+    </div>
+  </div>
+</section>

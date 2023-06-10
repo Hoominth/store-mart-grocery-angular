@@ -1,0 +1,112 @@
+<div class="cart">
+  <div class="container">
+    <div class="cart-title">
+      <h1>Your cart</h1>
+      <div class="cart-body">
+        <h6>There are <span>3</span> products in your cart</h6>
+        <h6>
+          <button (click)="clearCarts()">
+            <i class="fa-solid fa-trash"></i>
+            Clear Cart
+          </button>
+        </h6>
+      </div>
+    </div>
+
+    <div class="cart-row">
+      <div class="cart-product">
+        <div *ngIf="products; else noCarts">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2" style="text-align: left">Product</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td><img [src]="product.image[0]" [alt]="product.title" /></td>
+                <td>
+                  <h6>
+                    <a href="">{{ product.title }}</a>
+                  </h6>
+                  <app-star
+                    [rate]="{
+                      rating: product.rating,
+                      views: product.actions.views
+                    }"
+                  ></app-star>
+                </td>
+                <td>
+                  <span>{{ product.price | currency }}</span>
+                </td>
+                <td>
+                  <app-quantity [quantity]="product.quantity"></app-quantity>
+                </td>
+                <td>
+                  <a href=""><i class="fa-solid fa-trash"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #noCarts>
+          <img
+            style="width: 100%"
+            src="https://rtworkspace.com/wp-content/plugins/rtworkspace-ecommerce-wp-plugin/assets/img/empty-cart.png"
+            alt=""
+          />
+        </ng-template>
+      </div>
+
+      <div class="cart-total">
+        <div>
+          <table>
+            <tbody>
+              <tr>
+                <td><h6>Shipping</h6></td>
+                <td><h5>Free</h5></td>
+              </tr>
+              <tr>
+                <td><h6>Estimate for</h6></td>
+                <td><h5>United Kingdom</h5></td>
+              </tr>
+              <tr>
+                <td><h6>Total</h6></td>
+                <td>
+                  <h4>{{ total | currency }}</h4>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <a
+            (click)="goToCheckOut()"
+            class="btn"
+            style="display: block; text-align: center; margin: 20px 0"
+          >
+            Proceed To Checkout
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+
+        <div class="continue-shopping">
+          <a routerLink="/" class="btn">Continue Shopping</a>
+          <a href="" class="btn">Update Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="isLoading"
+  class="overlay__loading"
+  style="width: 100%; height: 100%"
+>
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>

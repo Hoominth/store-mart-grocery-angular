@@ -1,0 +1,229 @@
+<div class="container">
+  <a class="btn" style="margin: 20px 0" routerLink="/">Back home</a>
+
+  <div class="invoice" *ngIf="payments">
+    <div class="invoice__header">
+      <div class="invoice__row">
+        <div class="invoice__logo">
+          <img
+            src="https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/logo.svg"
+            alt=""
+          />
+        </div>
+        <div class="invoice__text">
+          <h2>INVOICE</h2>
+        </div>
+      </div>
+      <div class="invoice__row">
+        <div class="invoice__text-info">
+          {{ payments.address }}
+          <br />
+          <abbr title="Phone">Phone:</abbr>
+          {{ payments.phone }}
+        </div>
+        <div class="invoice__text-info">
+          <strong style="color: #3bb77e !important; font-weight: 700"
+            >Webz Poland</strong
+          >
+          <br />
+          <abbr title="Email">Email:</abbr>
+          {{ payments.email }}
+          <br />
+        </div>
+      </div>
+      <div class="invoice__row border-styles">
+        <div class="invoice__col">
+          <strong>Invoice No:</strong>
+          {{ payments.postcode }}
+        </div>
+        <div class="invoice__col">
+          <strong>Issue Date:</strong>
+          20 April, 2022
+        </div>
+      </div>
+    </div>
+
+    <div class="invoice__main">
+      <table>
+        <thead>
+          <th style="text-align: left">Item</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Amount</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of payments.products">
+            <td>
+              <div style="text-align: left">
+                <span style="font-size: 14px; font-weight: 600">{{
+                  product.title
+                }}</span>
+                <small style="font-size: 14px">SKU: {{ product.sku }}</small>
+              </div>
+            </td>
+            <td style="font-size: 15px; font-weight: 400">
+              {{ product.price | currency }}
+            </td>
+            <td style="font-size: 15px; font-weight: 400">
+              {{ product.quantity }}
+            </td>
+            <td style="font-size: 15px; font-weight: 400">
+              {{ product.price * product.quantity | currency }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="invoice__footer">
+      <div class="invoice__row content-center">
+        <div class="content-col">
+          <h6>Invoice Infor</h6>
+          <p>
+            <strong>Issue date:</strong>
+            20 march, 2022
+            <br />
+            <strong>Invoice To:</strong>
+            NestMart Inc
+            <br />
+            <strong>Swift Code:</strong>
+            BFTV VNVXS
+          </p>
+        </div>
+        <div class="content-col">
+          <h6>Total Amount</h6>
+          <h3>{{ payments.total | currency }}</h3>
+        </div>
+      </div>
+      <div class="invoice__note">
+        <div class="driver"></div>
+        <p style="color: #b6b6b6 !important; text-align: center">
+          <strong style="font-weight: 600">Note:</strong> This is computer
+          generated receipt and does not require physical signature.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="!payments"
+    style="display: flex; align-items: center; justify-content: center"
+  >
+    <img
+      style="width: 40%; z-index: -100"
+      src="./assets/images/nopayments.png"
+      alt=""
+    />
+    <span
+      style="
+        position: absolute;
+        z-index: 1;
+        color: #253d4e;
+        font-weight: 800;
+        font-size: 40px;
+        bottom: 200px;
+      "
+    >
+      No Payments
+    </span>
+  </div>
+</div>
+
+<style>
+  .invoice {
+    border-radius: 10px;
+    border: 1px solid #bce3c9;
+    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+
+    background: #fff;
+    margin-bottom: 30px;
+  }
+
+  .invoice__header {
+    background-color: #f7f8f9;
+    padding: 80px 150px 50px 150px;
+    margin-bottom: 50px;
+    border-radius: 10px 10px 0 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .invoice__row {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .invoice__logo,
+  .invoice__text,
+  .invoice__text-info {
+    width: 50%;
+  }
+  .invoice__logo {
+    text-align: left;
+  }
+
+  .invoice__text {
+    text-align: right;
+    font-size: 40px;
+    font-family: "Quicksand", sans-serif;
+    color: #253d4e;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .invoice__text-info:first-child {
+    text-align: left;
+    vertical-align: baseline;
+  }
+
+  .invoice__text-info:last-child {
+    text-align: right;
+    vertical-align: baseline;
+  }
+
+  .border-styles {
+    border-top: 2px solid #3bb77e;
+    border-bottom: 2px solid #3bb77e;
+    padding: 10px 0;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .invoice__main {
+    padding: 0 150px 40px;
+  }
+
+  .invoice__main table tr {
+    border: 1px solid #e9ecef;
+  }
+
+  .invoice__main table {
+    width: 100%;
+  }
+
+  .invoice__main table th,
+  .invoice__main table td {
+    padding: 15px 20px;
+    align-items: center;
+    border: 1px solid #ececec;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .invoice__main table td div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .invoice__footer {
+    padding: 0 150px 25px;
+  }
+
+  .content-center {
+    justify-content: space-between;
+  }
+</style>

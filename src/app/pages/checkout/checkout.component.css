@@ -1,0 +1,172 @@
+.checkout-row {
+  display: flex;
+  gap: 30px;
+}
+
+.checkout-col:first-child {
+  flex: 0 0 auto;
+  width: 58.3333333333%;
+}
+
+.checkout-col:last-child {
+  flex: 0 0 auto;
+  width: 41.6666666667%;
+  margin-left: auto;
+}
+
+.checkout-group {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkout-group:first-child {
+  margin-top: 40px;
+}
+
+.checkout-group input,
+.checkout-group select {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.checkout-products {
+  padding: 40px;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 30px 40px;
+  border: 1px solid #ececec !important;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.products__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ececec;
+}
+
+.products__heading h3 {
+  font-size: 24px;
+  font-family: "Quicksand", sans-serif;
+  color: #253d4e;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.products__heading span {
+  color: #b6b6b6 !important;
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.checkout-table table tr {
+  border: 1px solid #e9ecef;
+}
+
+.checkout-table table td {
+  padding: 0.5rem 0.5rem;
+}
+
+.checkout-table table td img {
+  max-width: 120px;
+  border-radius: 15px;
+  border: 1px solid #ececec;
+  padding: 5px;
+}
+
+.checkout-table table td h6 {
+  max-width: 160px;
+  margin-bottom: 5px;
+  font-size: 16px;
+
+  font-family: "Quicksand", sans-serif;
+  color: #253d4e;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.checkout-table table td h4 {
+  color: #b6b6b6;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-family: "Quicksand", sans-serif;
+  color: #253d4e;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.checkout-table table td span {
+  color: #3bb77e !important;
+  font-size: 24px;
+
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.message {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.error-style {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  background: red;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: 0.35s easeout;
+}
+
+.error-style-border {
+  border-color: red !important;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.overlay__loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c0bebeb9;
+}

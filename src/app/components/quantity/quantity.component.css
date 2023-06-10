@@ -1,0 +1,52 @@
+.quantity {
+  background: #fff;
+  border: 2px solid #3bb77e !important;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3bb77e;
+  border-radius: 5px;
+  padding: 11px 20px 11px 30px;
+  max-width: 90px;
+  position: relative;
+  width: 100%;
+}
+
+.quantity input {
+  border: 0;
+  border-radius: 0;
+  height: unset;
+  padding: 0 !important;
+  width: 100%;
+  font-size: 16px;
+  box-shadow: none;
+}
+
+.quantity button {
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  color: #3bb77e;
+  border: none;
+  background-color: rgba(235, 235, 245, 0.4);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.quantity button:hover {
+  background-color: rgba(194, 194, 195, 0.4);
+}
+
+.quantity button i {
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+.quantity button.quantity-decrease {
+  bottom: 0;
+}
+
+.quantity button.quantity-increase {
+  top: 0;
+}

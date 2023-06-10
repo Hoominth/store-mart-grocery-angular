@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="checkout-row">
+    <div class="checkout-col">
+      <form (ngSubmit)="onSubmit()">
+        <div class="checkout-group">
+          <input
+            [ngClass]="{ 'error-style-border': condition }"
+            type="text"
+            [(ngModel)]="firstName"
+            name="firstName"
+            placeholder="First Name"
+          />
+          <input
+            [ngClass]="{ 'error-style-border': condition }"
+            type="text"
+            [(ngModel)]="lastName"
+            name="lastName"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="checkout-group">
+          <input
+            [ngClass]="{ 'error-style-border': condition }"
+            type="text"
+            [(ngModel)]="address"
+            name="address"
+            placeholder="Address"
+          />
+          <input
+            [ngClass]="{ 'error-style-border': condition }"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
+        <div class="checkout-group">
+          <select name="country">
+            <option selected>Select an options</option>
+            <option value="Việt Nam">Việt Nam</option>
+          </select>
+          <input
+            [ngClass]="{ 'error-style-border': condition }"
+            type="text"
+            [(ngModel)]="cityAndTown"
+            name="cityAndTown"
+            placeholder="City / Town"
+          />
+        </div>
+        <div class="checkout-group">
+          <input
+            [ngClass]="{ 'error-style-border': condition }"
+            type="text"
+            [(ngModel)]="postcode"
+            name="postcode"
+            placeholder="Postcode / ZIP"
+          />
+          <input
+            [ngClass]="{ 'error-style-border': condition }"
+            type="text"
+            [(ngModel)]="phone"
+            name="phone"
+            placeholder="Phone"
+          />
+        </div>
+        <textarea
+          [ngClass]="{ 'error-style-border': condition }"
+          style="width: 100%"
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Additional information"
+        ></textarea>
+      </form>
+    </div>
+    <div class="checkout-col">
+      <div class="checkout-products">
+        <div class="products__heading">
+          <h3>Your Order</h3>
+          <span>Subtotal</span>
+        </div>
+
+        <div class="checkout-table">
+          <table>
+            <tbody *ngIf="products.length > 0">
+              <tr *ngFor="let product of products">
+                <td>
+                  <img [src]="product.image[0]" [alt]="product.title" />
+                </td>
+                <td>
+                  <div>
+                    <h6>{{ product.title }}</h6>
+                    <app-star [rate]="{ rating: product.rating }"></app-star>
+                  </div>
+                </td>
+                <td>
+                  <h4>x {{ product.quantity }}</h4>
+                </td>
+                <td>
+                  <span>{{ product.price | currency }}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn" (click)="submitForm()" style="margin-top: 20px">
+            Place an Order
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="message">
+  <div class="error-style" *ngIf="errorMessage">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <span>{{ errorMessage }}</span>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="overlay__loading">
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "category": 4,
+    "title": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+    "image": [
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-1.jpg",
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-2.jpg"
+    ],
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
+    "price": 28.85,
+    "oldPrice": 32.02,
+    "detail": {
+      "type": "Organic",
+      "sku": "FWM15VKT",
+      "mfg": "Jun 4.2022",
+      "tags": ["Snack", "Organic", "Brown"],
+      "stock": 8,
+      "life": 70
+    },
+    "popular": "HOT",
+    "actions": {
+      "likes": 0,
+      "views": 0
+    },
+    "rating": 4.0
+  },
+  {
+    "id": 2,
+    "category": 3,
+    "title": "All Natural Italian-Style Chicken Meatballs",
+    "image": [
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-1.jpg",
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-2.jpg"
+    ],
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
+    "price": 52.85,
+    "oldPrice": 55.8,
+    "detail": {
+      "type": "Organic",
+      "sku": "FWM15VKT",
+      "mfg": "Jun 4.2022",
+      "tags": ["Snack", "Organic", "Brown"],
+      "stock": 8,
+      "life": 70
+    },
+    "popular": "Sale",
+    "actions": {
+      "likes": 0,
+      "views": 0
+    },
+    "rating": 3.5
+  },
+  {
+    "id": 3,
+    "category": 2,
+    "title": "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
+    "image": [
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-1.jpg",
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-2.jpg"
+    ],
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
+    "price": 48.85,
+    "oldPrice": 52.8,
+    "detail": {
+      "type": "Organic",
+      "sku": "FWM15VKT",
+      "mfg": "Jun 4.2022",
+      "tags": ["Snack", "Organic", "Brown"],
+      "stock": 8,
+      "life": 70
+    },
+    "popular": "New",
+    "actions": {
+      "likes": 0,
+      "views": 0
+    },
+    "rating": 4.0
+  },
+  {
+    "id": 4,
+    "category": 1,
+    "title": "Foster Farms Takeout Crispy Classic Buffalo Wings",
+    "image": [
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg",
+      "https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-2.jpg"
+    ],
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
+    "price": 17.85,
+    "oldPrice": 19.8,
+    "detail": {
+      "type": "Organic",
+      "sku": "FWM15VKT",
+      "mfg": "Jun 4.2022",
+      "tags": ["Snack", "Organic", "Brown"],
+      "stock": 8,
+      "life": 70
+    },
+    "actions": {
+      "likes": 0,
+      "views": 0
+    },
+    "rating": 4.0
+  }
+]

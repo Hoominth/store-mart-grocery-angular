@@ -1,0 +1,35 @@
+<div class="products">
+  <div *ngFor="let product of data" class="product">
+    <div class="product__image">
+      <a [routerLink]="['/products/', product.id]">
+        <img [src]="image" alt="" *ngFor="let image of product.image" />
+      </a>
+      <div *ngIf="product.popular" class="product__popular">
+        <span>{{ product.popular }}</span>
+      </div>
+    </div>
+    <div class="product__content">
+      <div class="product__category">
+        <a [routerLink]="['/products/', product.id]">{{ product.category }}</a>
+      </div>
+      <h2>Seeds of Change Organic Quinoa, Brown, & Red Rice</h2>
+      <div class="product__rating">
+        <div class="product__rating-star">
+          <div [style.width.px]="(product.rating * 60) / 5"></div>
+        </div>
+        <span>({{ product.rating }})</span>
+      </div>
+      <div class="product__bottom">
+        <div class="product__price">
+          <span>${{ product.price }}</span>
+          <span class="product__price-old">${{ product.oldPrice }}</span>
+        </div>
+        <div class="add-cart">
+          <button (click)="addToCart(product)">
+            <i class="fa-solid fa-cart-shopping"></i> Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

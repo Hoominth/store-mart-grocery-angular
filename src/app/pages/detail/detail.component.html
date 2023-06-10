@@ -1,0 +1,119 @@
+<section class="section-detail">
+  <div class="container">
+    <div class="detail-row">
+      <div class="detail-product">
+        <div class="detail-product-row">
+          <div
+            class="detail-product__image"
+            style="overflow: hidden; position: relative"
+          >
+            <owl-carousel-o
+              [options]="customOptions"
+              [style.width.px]="495"
+              style="display: flex; position: relative; overflow: hidden"
+            >
+              <ng-container [style.width.px]="495" *ngFor="let image of images">
+                <ng-template carouselSlide [style.width.px]="495">
+                  <lib-ngx-image-zoom
+                    ngClass="owl-carousel-o-slide"
+                    [thumbImage]="image"
+                    [enableScrollZoom]="true"
+                    zoomMode="hover"
+                    [magnification]="2"
+                  >
+                  </lib-ngx-image-zoom>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+            <!-- Main Image -->
+
+            <owl-carousel-o
+              [options]="mainCarouselOptions"
+              [style.width.px]="495"
+              style="display: flex; position: relative; overflow: hidden"
+            >
+              <ng-container
+                [style.width.px]="495"
+                *ngFor="let image of images; let i = index"
+              >
+                <ng-template carouselSlide>
+                  <img [src]="image" alt="" (click)="changeMainImage(i)" />
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+          </div>
+          <div class="detail-product__info">
+            <span class="">{{ product.popular }}</span>
+            <h2>{{ product.title }}</h2>
+
+            <app-star
+              [rate]="{ rating: product.rating, views: product.actions.views }"
+            ></app-star>
+
+            <div class="detail-product__price">
+              <span>${{ product.price }}</span>
+              <span>
+                <span>26% Off</span>
+                <span>${{ product.oldPrice }}</span>
+              </span>
+            </div>
+
+            <p>{{ product.description }}</p>
+
+            <div class="product__detail-actions">
+              <app-quantity></app-quantity>
+              <div>
+                <button class="btn add-to-cart">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+                <a class="btn-action" href="">
+                  <i class="fa-regular fa-heart"></i>
+                </a>
+                <a class="btn-action" href="">
+                  <i class="fa-solid fa-code-compare"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="detail-product__props">
+              <ul class="props-list">
+                <li>
+                  Type: <span>{{ product.detail.type }}</span>
+                </li>
+                <li>
+                  MFG: <span>{{ product.detail.mfg }}</span>
+                </li>
+                <li>
+                  LIFE: <span>{{ product.detail.life }}</span>
+                </li>
+              </ul>
+              <ul class="props-list">
+                <li>
+                  SKU: <span>{{ product.detail.sku }}</span>
+                </li>
+                <li>
+                  Tags: <span>{{ product.detail.tags.join(", ") }}</span>
+                </li>
+                <li>
+                  Stock: <span>{{ product.detail.stock }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-aside"></div>
+    </div>
+  </div>
+</section>
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/WM1bIfpRaCU"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>

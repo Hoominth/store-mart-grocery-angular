@@ -1,0 +1,25 @@
+<div class="slider-container">
+  <div
+    class="slide"
+    *ngFor="let slide of slides; let i = index"
+    [class.active]="i === currentSlideIndex"
+  >
+    <img [src]="slide.imageUrl" alt="Slide {{ i + 1 }}" />
+    <div class="slide-content">
+      <h1>
+        {{ slide.title.split(" ")[1] }} {{ slide.title.split(" ")[2] }} <br />
+        {{ slide.title.split(" ")[3] }} {{ slide.title.split(" ")[4] }}
+      </h1>
+      <p>{{ slide.description }}</p>
+      <form action="" class="slide-form">
+        <input type="text" placeholder="Your emaill address" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="prev-button" (click)="showPreviousSlide()">&lt;</button>
+    <button class="next-button" (click)="showNextSlide()">&gt;</button>
+  </div>
+</div>

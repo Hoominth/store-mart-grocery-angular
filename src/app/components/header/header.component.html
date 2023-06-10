@@ -1,0 +1,178 @@
+<header class="header">
+  <div class="container">
+    <div class="header__main">
+      <div class="header__logo">
+        <a routerLink="/" class="header__link">
+          <img
+            src="	https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/logo.svg"
+            alt="Logo Nest"
+          />
+        </a>
+      </div>
+      <div class="header__right">
+        <div class="header__search">
+          <input
+            [(ngModel)]="searchKeyword"
+            (blur)="clearSearchQuery()"
+            (keyup)="search()"
+            class="header__search-input"
+            type="text"
+            placeholder="Search for items ..."
+            [class.focused]="isInputFocused"
+          />
+          <!-- <button class="header__search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button> -->
+
+          <div class="results">
+            <div
+              *ngIf="resutls.length > 0 && isInputFocused; else noResultsBlock"
+            >
+              <div *ngFor="let product of resutls.slice(0, 3)">
+                <div class="search__product">
+                  <a routerLink="" class="search__product-link">
+                    <div class="search__product-image">
+                      <img [src]="product.image[0]" [alt]="product.title" />
+                    </div>
+                    <div class="search__product-content">
+                      <h4>{{ product.title }}</h4>
+                      <div class="search__product-group">
+                        <div class="row">
+                          <div class="search__product-rating">
+                            <div class="search__product-rating-star">
+                              <div
+                                [style.width.px]="(product.rating * 60) / 5"
+                              ></div>
+                            </div>
+                          </div>
+                          <span>({{ product.rating }})</span>
+                        </div>
+                        <div class="search__product-price">
+                          <span>{{ product.price }}</span>
+                          <span>{{ product.oldPrice }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <ng-template #noResultsBlock>
+              <div class="no-item">No products Results</div>
+            </ng-template>
+          </div>
+        </div>
+
+        <div class="header__actions">
+          <div *ngFor="let action of actions" class="header__action">
+            <div *ngIf="action.path !== '/account'; else account">
+              <div *ngIf="action.path === '/shop-cart'">
+                <div>Test</div>
+              </div>
+              <a [routerLink]="action.path" class="header__action-link">
+                <img [src]="action.icon" [alt]="action.title" />
+                <span
+                  *ngIf="
+                    action.count && action.path === '/shop-cart';
+                    else normal
+                  "
+                  class="header__action-count"
+                >
+                  {{ cartCount }}
+                </span>
+                <ng-template #normal>
+                  <span class="header__action-count">
+                    {{ action.count }}
+                  </span>
+                </ng-template>
+              </a>
+              <a [routerLink]="action.path" class="header__action-link">
+                <span class="header__action-title">
+                  {{ action.title }}
+                </span>
+              </a>
+            </div>
+            <ng-template #account>
+              <div *ngIf="currentUser; else noUserBlock" class="header__user">
+                <!-- Giao diện thông tin người dùng -->
+                <div class="header__user-image">
+                  <img
+                    [src]="
+                      currentUser?.image
+                        ? ''
+                        : 'https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg'
+                    "
+                    alt=""
+                  />
+                </div>
+
+                <div class="header__user-menu">
+                  <p>Welcome, {{ currentUser.username }}!</p>
+                  <button (click)="logout()">logout</button>
+                </div>
+
+                <!-- Hiển thị các thông tin người dùng khác -->
+              </div>
+              <ng-template #noUserBlock>
+                <a [routerLink]="action.path" class="header__action-link">
+                  <img [src]="action.icon" [alt]="action.title" />
+                  <span *ngIf="action.count" class="header__action-count">{{
+                    action.count
+                  }}</span>
+                </a>
+                <a [routerLink]="action.path" class="header__action-link">
+                  <span class="header__action-title">
+                    {{ action.title }}
+                  </span>
+                </a>
+              </ng-template>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="navbars">
+  <div class="container">
+    <div class="navbars__main">
+      <div class="navbar">
+        <div class="navbar__categories">
+          <button class="navbar__categories-button">
+            <span>Browse</span>
+            All Categories
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
+        </div>
+        <nav>
+          <ul class="navbar__list">
+            <li class="navbar__item">
+              <img
+                src="https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-hot.svg"
+                alt="Hot deals"
+              />
+              <a class="navbar__item-link">Deals</a>
+            </li>
+            <li class="navbar__item" *ngFor="let navigation of navigations">
+              <a class="navbar__item-link" [routerLink]="navigation.path"
+                >{{ navigation.title }}
+                <i *ngIf="navigation.icon" [class]="navigation.icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="navbar__hotline">
+        <img
+          src="https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-headphone.svg"
+          alt="Icon headphone"
+        />
+        <p>
+          1900 - 888
+          <span>24/7 Support Center</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

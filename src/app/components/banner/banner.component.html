@@ -1,0 +1,12 @@
+<div class="banners">
+  <div *ngFor="let banner of data" class="banner">
+    <img [src]="banner.image" [alt]="banner.title" />
+    <div class="banner__content">
+      <h4>{{ banner.title }}</h4>
+      <a routerLink="" class="btn"
+        >Shop Now
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+[
+  {
+    "path": "/",
+    "title": "Home"
+  },
+  {
+    "path": "/about",
+    "title": "About"
+  },
+  {
+    "path": "/shop",
+    "title": "Shop",
+    "icon": "fa-solid fa-angle-down"
+  },
+  {
+    "path": "/blogs",
+    "title": "Blogs",
+    "icon": "fa-solid fa-angle-down"
+  },
+  {
+    "path": "/contact-us",
+    "title": "Contact"
+  }
+]

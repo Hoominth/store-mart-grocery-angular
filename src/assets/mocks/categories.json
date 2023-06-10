@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-1.svg",
+    "title": "Milks and Dairies"
+  },
+  {
+    "id": 2,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-2.svg",
+    "title": "Clothing & beauty"
+  },
+  {
+    "id": 3,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-3.svg",
+    "title": "Pet Foods & Toy"
+  },
+  {
+    "id": 4,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-4.svg",
+    "title": "Baking material"
+  },
+  {
+    "id": 5,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-5.svg",
+    "title": "Fresh Fruit"
+  },
+  {
+    "id": 6,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-6.svg",
+    "title": "Wines & Drinks"
+  },
+  {
+    "id": 7,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-7.svg",
+    "title": "Fresh Seafood"
+  },
+  {
+    "id": 8,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-8.svg",
+    "title": "Fast food"
+  },
+  {
+    "id": 9,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-9.svg",
+    "title": "Vegetables"
+  },
+  {
+    "id": 10,
+    "icon": "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/category-10.svg",
+    "title": "Bread and Juice"
+  }
+]

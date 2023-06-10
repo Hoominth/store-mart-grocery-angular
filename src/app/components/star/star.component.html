@@ -1,0 +1,7 @@
+<div class="rating">
+  <div class="rating__star">
+    <div [style.width.px]="(rate.rating * 60) / 5"></div>
+  </div>
+  <!-- Reviews -->
+  <span *ngIf="rate.views">({{ rate.views }}&#160;reviews)</span>
+</div>
