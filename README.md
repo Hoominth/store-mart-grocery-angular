@@ -1,4 +1,4 @@
-# NestStore
+# Nest Store
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
@@ -28,4 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Json Server
 
-json-server -w src/assets/mocks/data.json
+Run json-server
+
+> `json-server -w src/assets/mocks/data.json`
